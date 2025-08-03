@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トップページ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+
+<body>
+    <header class="site-header hide-on-load">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/img/toplogo.png" alt="ロゴ">
+                </a>
+            </div>
+
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#"><span>TOP</span><br><small>トップ</small></a></li>
+                    <li><a href="therapist-list.html"><span>THERAPIST</span><br><small>セラピスト一覧</small></a></li>
+                    <li><a href="shift-schedule.html"><span>SCHEDULE</span><br><small>スケジュール</small></a></li>
+                    <li><a href="price-system.html"><span>SYSTEM</span><br><small>料金・システム</small></a></li>
+                    <li><a href="recruit-info.html"><span>RECRUIT</span><br><small>求人</small></a></li>
+                    <li><a href="access-info.html"><span>ACCESS</span><br><small>アクセス</small></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <!-- メインビジュアル -->
+    <section class="mainvisual">
+        <div class="slideshow">
+            <div class="slide active" style="background-image: url('assets/img/mainvisual1.jpeg');"></div>
+            <div class="slide" style="background-image: url('assets/img/mainvisual2.jpeg');"></div>
+        </div>
+        <h1><img src="assets/img/mainlogo.png" alt="ロゴ画像"></h1>
+    </section>
+
+    <!-- 出勤予定のセラピスト -->
+    <section class="section-therapist section-margin fade-section">
+        <h2 class="section-title">TODAY'S THERAPIST</h2>
+        <p class="section-subtitle">本日の出勤セラピストをご紹介します</p>
+
+        <div class="therapist-cards">
+            <!-- ▼ セラピストカード：1人分 -->
+            <div class="therapist-card">
+                <div class="img-wrap">
+                    <img src="assets/img/sample.png" alt="セラピスト写真">
+                    <img src="assets/img/icon-x.png" alt="×" class="icon-x">
+                </div>
+                <div class="info">
+                    <h3 class="name">さき（26）</h3>
+                    <p class="size">T153 B83(D) W57 H82</p>
+                    <div class="tags">
+                        <span class="tag tag-pink">新人</span>
+                        <span class="tag tag-blue">美白</span>
+                        <span class="tag tag-yellow">指名率No.1</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ▼ セラピストカード：2人分 -->
+            <a href="therapist-profile.html" class="therapist-card">
+                <div class="img-wrap">
+                    <img src="assets/img/sample.png" alt="セラピスト写真">
+                    <img src="assets/img/icon-x.png" alt="×" class="icon-x">
+                </div>
+                <div class="info">
+                    <h3 class="name">もも（22）</h3>
+                    <p class="size">T158 B82(C) W56 H80</p>
+                </div>
+                <div class="tags">
+                    <span class="tag tag-purple">美人</span>
+                    <span class="tag tag-navy">低身長</span>
+                </div>
+            </a>
+            <!-- ▼ セラピストカード：3人分 -->
+            <a href="therapist-profile.html" class="therapist-card">
+                <div class="img-wrap">
+                    <img src="assets/img/sample.png" alt="セラピスト写真">
+                    <img src="assets/img/icon-x.png" alt="×" class="icon-x">
+                </div>
+                <div class="info">
+                    <h3 class="name">もも（22）</h3>
+                    <p class="size">T158 B82(C) W56 H80</p>
+                </div>
+                <div class="tags">
+                    <span class="tag tag-purple">美人</span>
+                    <span class="tag tag-navy">低身長</span>
+                </div>
+            </a>
+            <!-- ▼ セラピストカード：4人分 -->
+            <a href="therapist-profile.html" class="therapist-card">
+                <div class="img-wrap">
+                    <img src="assets/img/sample.png" alt="セラピスト写真">
+                    <img src="assets/img/icon-x.png" alt="×" class="icon-x">
+                </div>
+                <div class="info">
+                    <h3 class="name">もも（22）</h3>
+                    <p class="size">T158 B82(C) W56 H80</p>
+                </div>
+                <div class="tags">
+                    <span class="tag tag-purple">美人</span>
+                    <span class="tag tag-navy">低身長</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="therapists">
+            <a href="shift-schedule.html" class="btn">出勤情報はこちらから</a>
+        </div>
+
+    </section>
+
+    <!-- イベントセクション -->
+    <section id="section_event" class="event_swiper section-margin fade-section">
+        <h2 class="section-title">EVENT</h2>
+        <p class="section-subtitle">イベント</p>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="assets/img/event1.jpeg" alt="Xリンクバナー">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="assets/img/event2.jpeg" alt="姉妹店バナー">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="recruit-info.html">
+                        <img src="assets/img/event3.jpeg" alt="求人情報バナー">
+                    </a>
+                </div>
+            </div>
+
+            <!-- ページネーション＆ナビ -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <!-- コンセプトセクション -->
+    <section class="concept-section-top fade-section">
+        <div class="concept-content-top">
+            <h2>日常の裏側にある、秘密の癒し</h2>
+            <p>
+                裏妻SPAは、“表”の世界では味わえない、<br>
+                裏の時間（ひととき）をテーマにした【人妻専門のメンズエステ】です。<br>
+                清楚で落ち着いた雰囲気の中にも、<br>
+                どこか“裏”を感じさせるミステリアスな人妻セラピストたちが、<br>
+                忙しい男性の日常を忘れさせるような大人の癒しとトキメキを提供します。<br><br>
+                「人妻」の持つ安心感、やさしさ、包容力、そして隠しきれない色気。<br>
+                それらを最大限に引き出しながらも、あくまで品のある接客・空間づくりを徹底しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- 料金・システムセクション -->
+    <section class="price-section section-margin fade-section" id="section_price">
+        <div class="section-inner">
+
+            <!-- セクションタイトル -->
+            <h2 class="section-title pricing">✧ コース料金 ✧</h2>
+
+            <!-- イメージ画像 -->
+            <div class="price-image">
+                <img src="assets/img/price-image.jpeg" alt="癒しのイメージ画像">
+            </div>
+
+            <!-- 料金テーブル -->
+            <table class="price-table">
+                <tbody>
+                    <tr>
+                        <td class="course-name">75分</td>
+                        <td class="separator">›››</td>
+                        <td class="course-price">14,000円</td>
+                    </tr>
+                    <tr>
+                        <td class="course-name">90分</td>
+                        <td class="separator">›››</td>
+                        <td class="course-price">16,000円</td>
+                    </tr>
+                    <tr>
+                        <td class="course-name">120分</td>
+                        <td class="separator">›››</td>
+                        <td class="course-price">20,000円</td>
+                    </tr>
+                    <tr>
+                        <td class="course-name">延長　30分</td>
+                        <td class="separator">›››</td>
+                        <td class="course-price">6,000円</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="price-image">
+            <img src="assets/img/kessai.png" alt="クレジットカード">
+        </div>
+
+    </section>
+
+    <!-- 店舗情報セクション -->
+    <section id="section_shopinfo" class="shopinfo_section section-margin fade-section">
+        <h2 class="section-title">ACCESS</h2>
+        <p class="section-subtitle">店舗情報</p>
+
+        <div class="shopinfo_flex">
+            <div class="shopinfo_item">
+                <div class="shopinfo_map">
+                    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p class="shopinfo_station"><span>〇〇線</span> 〇〇駅</p>
+                <p class="shopinfo_note">詳細はご予約時にお伝えいたします。</p>
+            </div>
+
+            <div class="shopinfo_item">
+                <div class="shopinfo_map">
+                    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p class="shopinfo_station"><span>〇〇線</span> 〇〇駅</p>
+                <p class="shopinfo_note">詳細はご予約時にお伝えいたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sns-section fade-section">
+        <h2 class="sns-title">SNS</h2>
+        <div class="sns-links">
+            <a href="https://x.com/SPAuraduma" target="_blank" class="sns-card twitter">
+                <img src="assets/img/icon-x.png" alt="X">
+                <div class="sns-info">
+                    <span class="sns-name">X（旧Twitter）</span>
+                    <span class="sns-handle">@SPAuraduma</span>
+                </div>
+            </a>
+            <a href="https://bsky.app/profile/spauraduma.bsky.social" target="_blank" class="sns-card bluesky">
+                <img src="assets/img/icon-Bluesky.svg" alt="Bluesky">
+                <div class="sns-info">
+                    <span class="sns-name">Bluesky</span>
+                    <span class="sns-handle">@spauraduma.bsky.social</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- LINKセクション -->
+    <section id="section_links" class="link_section section-margin fade-section">
+        <h2 class="section-title">LINK</h2>
+
+        <div class="link_grid">
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク1"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク2"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク3"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク4"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク5"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク6"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク7"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク8"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク9"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク10"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク11"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク12"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク13"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク14"></a>
+            <a href="#" target="_blank"><img src="assets/img/sample.png" alt="リンク15"></a>
+            <!-- 必要なだけ画像リンクを追加 -->
+        </div>
+    </section>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/img/toplogo.png" alt="フッターロゴ" />
+            </div>
+            <div class="footer-divider"></div>
+            <nav class="footer-nav">
+                <ul class="main-nav">
+                    <li><a href="#"><span>TOP</span><br><small>トップ</small></a></li>
+                    <li><a href="therapist-list.html"><span>THERAPIST</span><br><small>セラピスト一覧</small></a></li>
+                    <li><a href="shift-schedule.html"><span>SCHEDULE</span><br><small>スケジュール</small></a></li>
+                    <li><a href="price-system.html"><span>SYSTEM</span><br><small>料金・システム</small></a></li>
+                    <li><a href="recruit-info.html"><span>RECRUIT</span><br><small>求人</small></a></li>
+                    <li><a href="access-info.html"><span>ACCESS</span><br><small>アクセス</small></a></li>
+                </ul>
+            </nav>
+            <p class="footer-copy">©2025 裏妻SAP. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 固定ボタン -->
+    <div class="bottom-fixed hide-on-load">
+        <a href="tel:070-2447-9309" class="fixed-btn tel-fixed">
+            <img src="assets/img/icon-tel.png" alt="">
+            <span>電話予約<br class="sp-only">070-2447-9309</span>
+        </a>
+        <a href="https://lin.ee/towF3Fs" class="fixed-btn line-fixed" target="_blank">
+            <img src="assets/img/icon-line.png" alt="">
+            <span>LINE予約</span>
+        </a>
+    </div>
+
+    <!-- Swiper本体のJSを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- 自作JS（Swiperの初期化など） -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
