@@ -413,6 +413,27 @@ EVENTセクション（Swiperスライダー）
     color: #3e2b2b;
 }
 
+.concept-section .concept-bg-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.concept-section .concept-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 60px 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
 /* --------------------------------------------------
 料金・システムセクション
 -------------------------------------------------- */
@@ -428,7 +449,7 @@ EVENTセクション（Swiperスライダー）
     max-width: 900px;
     margin: 0 auto;
     border: 2px solid #e5dcdc;
-    padding: 40px 20px;
+    padding: 40px 20px 0 20px;
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
@@ -458,18 +479,68 @@ EVENTセクション（Swiperスライダー）
 
 
 .price-image {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 40px auto 0 auto;
-    padding: 0 20px;
     text-align: center;
 }
 
 .price-image img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.price-imag {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+
+.price-imag img {
+    width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
-    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* 見出しの共通装飾（コース料金・オプション料金） */
+.section-title.pricing {
+    font-size: 24px;
+    color: #e4709f;
+    text-align: center;
+    position: relative;
+    margin: 40px 0 20px;
+}
+
+.section-title.pricing span {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #d96b94;
+    ;
+}
+
+.section-title.pricing span::before,
+.section-title.pricing span::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background-color: #d96b94;
+    ;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+/* オプション用テーブル（スタイルは既存のprice-tableを共用） */
+.option-title {
+    margin-top: 60px;
 }
 
 /* テーブル */
@@ -602,6 +673,7 @@ EVENTセクション（Swiperスライダー）
     line-height: 1.8;
 }
 
+
 /* 特定商取引法に基づく表示 */
 .law-section {
     background: #f8f8f8;
@@ -660,6 +732,7 @@ EVENTセクション（Swiperスライダー）
     color: #555;
     line-height: 1.8;
 }
+
 
 /* --------------------------------------------------
 ACCESS（Google Map）
@@ -2526,8 +2599,65 @@ SNS セクションを追加
         word-break: break-word;
     }
 
+    .price-section {
+        padding: 60px 16px;
+    }
+
+    /* タイトルサイズをスマホ向けに調整 */
+    .section-title.pricing {
+        font-size: 20px;
+        margin: 30px 0 16px;
+    }
+
+    .section-title.pricing span {
+        font-size: 18px;
+        padding: 0 12px;
+    }
+
+    .section-title.pricing span::before,
+    .section-title.pricing span::after {
+        width: 40px;
+        margin: 0 8px;
+    }
+
+    /* イメージの高さと余白を縮小 */
     .price-image {
-        padding: 0;
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 16px auto;
+    }
+
+    .price-image img {
+        max-height: 140px;
+        border-radius: 6px;
+    }
+
+    /* テーブルフォントと余白を小さく */
+    .price-table {
+        font-size: 18px;
+        margin: 20px auto;
+    }
+
+    .price-table td {
+        padding: 12px 6px;
+    }
+
+    .course-name {
+        font-size: 18px;
+    }
+
+    .course-price {
+        font-size: 18px;
+    }
+
+    .separator {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    /* オプションテーブル上のマージン調整 */
+    .option-title {
+        margin-top: 48px;
     }
 
     /* 特定商法取引法に基づく表示 */
