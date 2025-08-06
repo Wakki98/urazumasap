@@ -1,0 +1,2718 @@
+/* --------------------------------------------------
+共通：タイトル／サブタイトル
+-------------------------------------------------- */
+body {
+    background: url("../img/sanp3.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.section-margin {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+section.inner:last-of-type {
+    margin-bottom: 100px;
+}
+
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.section-inner,
+.concept-section .concept-content,
+.price-section .section-inner,
+.shopinfo_section .shopinfo_flex,
+.link_section .link_grid,
+.footer_inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* オーバーレイ（マスク） */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* --------------------------------------------------
+ヘッダー（ロゴ・ナビ横並び）
+-------------------------------------------------- */
+/* ヘッダー全体 */
+header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* 横並びのラッパー */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+/* ロゴ */
+.logo img {
+    height: 40px;
+    max-width: 100%;
+    display: block;
+}
+
+/* ナビゲーション */
+nav ul.main-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+nav ul.main-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.2;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+nav ul.main-nav li a:hover {
+    color: #e4709f;
+}
+
+/* 初期状態（非表示・上に隠す） */
+.hide-on-load {
+    opacity: 0;
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.show-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hide-on-load,
+.show-header {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------
+メインビジュアル（中央ロゴ）
+-------------------------------------------------- */
+.mainvisual {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.mainvisual h1 {
+    position: relative;
+    z-index: 2;
+}
+
+.mainvisual h1 img {
+    width: 400px;
+    height: auto;
+    max-width: 80%;
+}
+
+/* --------------------------------------------------
+TODAY'S THERAPIST（共通カードデザイン）
+-------------------------------------------------- */
+/* TODAY'S THERAPIST セクション共通化CSS */
+.section-therapist {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.therapist-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card .age {
+    font-size: 13px;
+    color: #888;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 12px;
+    background-color: #e4709f;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 9999px;
+}
+
+/* 出勤情報ボタン */
+.therapists {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.therapists .btn {
+    display: inline-block;
+    background-color: #e4709f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.therapists .btn:hover {
+    background-color: #d45a8c;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+EVENTセクション（Swiperスライダー）
+-------------------------------------------------- */
+.event_swiper .swiper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 各スライドの画像調整 */
+.event_swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ページネーション位置とスタイル */
+.event_swiper .swiper-pagination {
+    position: relative;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* ドットの見た目 */
+.event_swiper .swiper-pagination-bullet {
+    background: #999;
+    opacity: 1;
+    margin: 0 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.event_swiper .swiper-pagination-bullet-active {
+    background: #333;
+}
+
+/* --------------------------------------------------
+コンセプトセクション全体
+-------------------------------------------------- */
+/* ==== top.html 専用 === */
+
+.concept-section-top {
+    background-image: url('../img/event3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.concept-content-top {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    line-height: 2;
+    color: #3e2b2b;
+}
+
+/* ==== price-system.html 専用 === */
+.concept-section-price {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.concept-wrapper-price {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.concept-bg-img-price {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.concept-content-price {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+    color: #3e2b2b;
+}
+
+.concept-section .concept-bg-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.concept-section .concept-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 60px 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* --------------------------------------------------
+料金・システムセクション
+-------------------------------------------------- */
+.price-section {
+    background-color: #f8f8f8;
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* セクション内の枠 */
+.section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #e5dcdc;
+    padding: 40px 20px 0 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* concept-section 専用の幅調整 */
+.concept-section .concept-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+/* セクションタイトル */
+.section-title {
+    font-size: 40px;
+    color: #cc6d8a;
+    position: relative;
+}
+
+#section_price .section-title {
+    font-size: 28px;
+    color: #cc6d8a;
+    position: relative;
+}
+
+
+.price-image {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+.price-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.price-imag {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+
+.price-imag img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 見出しの共通装飾（コース料金・オプション料金） */
+.section-title.pricing {
+    font-size: 24px;
+    color: #e4709f;
+    text-align: center;
+    position: relative;
+    margin: 40px 0 20px;
+}
+
+.section-title.pricing span {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #d96b94;
+    ;
+}
+
+.section-title.pricing span::before,
+.section-title.pricing span::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background-color: #d96b94;
+    ;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+/* オプション用テーブル（スタイルは既存のprice-tableを共用） */
+.option-title {
+    margin-top: 60px;
+}
+
+/* テーブル */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.price-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.price-table td {
+    padding: 16px 10px;
+    vertical-align: middle;
+}
+
+/* コース名（左） */
+.course-name {
+    text-align: center;
+    font-weight: 500;
+    width: 45%;
+}
+
+/* 矢印（中央） */
+.separator {
+    text-align: center;
+    width: 10%;
+    color: #999;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+/* 価格（右） */
+.course-price {
+    text-align: center;
+    color: #cc6d8a;
+    font-weight: bold;
+    width: 45%;
+}
+
+.concept-section {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.concept-wrapper {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+.concept-bg-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.concept-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 60px 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 利用規約に関する部分 */
+.terms-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'Noto Serif JP', serif;
+    color: #333;
+    text-align: left;
+}
+
+.terms-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 auto 30px auto;
+    color: #d96b94;
+    border-bottom: 2px solid #d96b94;
+    padding-bottom: 5px;
+    display: table;
+}
+
+.terms-box {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.terms-block {
+    margin-bottom: 40px;
+}
+
+.terms-block h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d96b94;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #d96b94;
+    padding-bottom: 5px;
+}
+
+.terms-block p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.terms-block ul {
+    padding-left: 1.5em;
+    list-style-type: disc;
+    margin-bottom: 10px;
+}
+
+.terms-block ul li {
+    line-height: 1.8;
+}
+
+
+/* 特定商取引法に基づく表示 */
+.law-section {
+    background: #f8f8f8;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+}
+
+.law-section .section-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.law-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d96b94;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #d96b94;
+    padding-bottom: 5px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.law-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
+}
+
+.law-table th,
+.law-table td {
+    padding: 15px 20px;
+    border: 1px solid #f7e6ed;
+    vertical-align: top;
+    word-break: break-word;
+    line-height: 1.6;
+}
+
+.law-table th {
+    background: #f8b6c8;
+    color: #fff;
+    text-align: left;
+    width: 210px;
+    font-weight: bold;
+}
+
+.law-note {
+    padding-top: 20px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+
+/* --------------------------------------------------
+ACCESS（Google Map）
+-------------------------------------------------- */
+.shopinfo_section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.shopinfo_flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shopinfo_item {
+    flex: 1 1 calc(50% - 10px);
+    max-width: 390px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.shopinfo_map {
+    aspect-ratio: 4 / 3;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.shopinfo_station {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.shopinfo_station span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.shopinfo_note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* ---------------------------------------------
+LINKセクション
+--------------------------------------------- */
+.link_section {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.link_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* 各リンク内の画像 */
+.link_grid a img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.link_grid a:hover img {
+    transform: scale(1.05);
+}
+
+/* --------------------------------------------------
+FOOTER
+-------------------------------------------------- */
+footer {
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.site-footer {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.footer-nav .main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 60px;
+    list-style: none;
+}
+
+.footer-nav .main-nav li {
+    display: inline-block;
+}
+
+.footer-nav .main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.footer-nav .main-nav a small {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    color: #777;
+}
+
+.footer-copy {
+    font-size: 12px;
+    margin-bottom: 50px;
+    color: #999;
+}
+
+.footer-divider {
+    border-top: 1px solid #000;
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* ----------------------------
+スマホ下部固定ボタン
+----------------------------- */
+.fixed-btn {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 20px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.fixed-btn img {
+    height: 20px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.tel-fixed {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #AB0044;
+    margin-right: 10px;
+}
+
+.tel-fixed:hover {
+    background: rgba(171, 0, 68, 0.6);
+    color: #fff;
+}
+
+.line-fixed {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #16BC2D;
+}
+
+.line-fixed:hover {
+    background: rgba(22, 188, 45, 0.6);
+    color: #fff;
+}
+
+.sp-only {
+    display: none;
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 192, 211, 0.7);
+    z-index: 9999;
+    padding: 10px 0;
+}
+
+.bottom-fixed a {
+    color: #000;
+    text-decoration: none;
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.bottom-fixed.hide-on-load {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.bottom-fixed.show-fixed {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2000;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ------------------------------
+セラピスト一覧ページ用スタイル
+------------------------------ */
+#section_therapist {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.main-visual {
+    background: url('../img/event2.jpeg') center/cover no-repeat;
+    height: 342px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.main-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* カード全体 */
+#section_therapist {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.therapist-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.therapist-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.img-wrap img:first-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon-x {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.name {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.size {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.badge.worktime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.badge.worktime img {
+    margin-right: 5px;
+    width: 17px;
+    object-fit: contain;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 9999px;
+}
+
+.tag-pink {
+    background-color: #f28bba;
+}
+
+.tag-blue {
+    background-color: #71c6dd;
+}
+
+.tag-yellow {
+    background-color: #ffd761;
+}
+
+.tag-green {
+    background-color: #4caf50;
+}
+
+.tag-purple {
+    background-color: #a370f7;
+}
+
+.tag-orange {
+    background-color: #ff6d3a;
+}
+
+.tag-navy {
+    background-color: #497d92;
+}
+
+/* ページネーション */
+.pagination {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.page-num,
+.page-next {
+    display: inline-block;
+    margin: 0 6px;
+    padding: 5px 12px;
+    background: #ff98b0;
+    color: #000;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* =========================
+セラピスト詳細ページ
+========================= */
+.page-hero.-profile {
+    background: url('../img/event2.jpeg') center/cover no-repeat;
+    height: 220px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    margin-bottom: 40px;
+}
+
+.page-hero.-profile .main-title {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.page-hero.-profile .main-subtitle {
+    margin-top: 8px;
+}
+
+/* ==== プロフィールセクション ==== */
+.profile-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 15px;
+}
+
+.profile-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* 右側：名前・タグなど */
+.profile-detail {
+    flex: 1 1 400px;
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* 名前と年齢 */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.profile-name {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+/* サイズ情報 */
+.profile-size {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* タグ */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.tag-blue {
+    background: #4D9DE0;
+}
+
+.tag-purple {
+    background: #B388EB;
+}
+
+.tag-orange {
+    background: #FFA500;
+}
+
+.tag-yellow {
+    background: #FFD700;
+}
+
+/* X（旧Twitter）リンク */
+.btn-x-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #d96b94, #d96b94);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-x-link:hover {
+    background: linear-gradient(45deg, #cc3b70, #cc3b70);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* アイコン画像 */
+.btn-x-link .btn-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+
+/* 紹介文 */
+.profile-text p {
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ギャラリー（サムネイル） */
+.profile-gallery {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.profile-gallery .thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.7;
+    border-radius: 8px;
+}
+
+.profile-gallery .thumb.is-active {
+    border: 2px solid #AB0044;
+    opacity: 1;
+}
+
+/* 出勤情報 */
+.schedule-section {
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+.schedule-section .section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.schedule-table th {
+    background-color: #f395bbbb;
+    color: #333;
+    font-weight: normal;
+    padding: 8px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #525252;
+    padding: 10px;
+    text-align: center;
+}
+
+/* メイン画像スライダー */
+.profile-main {
+    width: 500px;
+    height: 560px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+/* 左：画像 */
+.profile-images {
+    width: 100%;
+    overflow: hidden;
+    flex: 0 0 48%;
+    max-width: 480px;
+}
+
+/* 右：テキスト */
+.profile-detail {
+    flex: 0 0 48%;
+}
+
+.profile-main img,
+.profile-thumbs img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.profile-main .swiper-slide {
+    width: 100% !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-main img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+
+/* サムネイルスライダー */
+.profile-thumbs {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 各スライド（画像） */
+.profile-thumbs .swiper-slide {
+    width: 150px !important;
+    height: 200px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.profile-thumbs .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+.profile-thumbs .swiper-slide:last-child {
+    margin-right: 0;
+}
+
+.profile-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+
+/* アクティブ状態の装飾 */
+.profile-thumbs .swiper-slide-thumb-active img {
+    border-color: #f7c9d4;
+    opacity: 1;
+}
+
+
+.profile-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.schedule-btn-wrap {
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #AB0044;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ========================
+求人ページ
+======================== */
+/* メインビジュアルセクション */
+.mv-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    /* ←追加することで制御可能 */
+    overflow: hidden;
+}
+
+.recruit-intro-visual {
+    position: relative;
+    background: linear-gradient(to bottom, #fff, #fff0f5);
+    /* 白〜淡ピンク */
+    margin: 80px 0;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.mv-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mv-image img {
+    width: 100%;
+    height: auto;
+    /* ←これが自然 */
+    object-fit: cover;
+    display: block;
+    max-height: 500px;
+    /* ←必要ならここでさらに絞る */
+}
+
+/* 黒のオーバーレイを追加 */
+.mv-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 下部の白ぼかしグラデーション */
+.mv-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 1) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* テキスト部分 */
+.mv-section .mv-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 3;
+    padding: 0 20px;
+}
+
+.mv-section .mv-text h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.6;
+}
+
+.mv-section .mv-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* CTAボタン */
+.mv-section .btn-primary {
+    background-color: #AB0044;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    z-index: 3;
+    position: relative;
+}
+
+.mv-section .btn-primary:hover {
+    background-color: #c2004d;
+}
+
+/* 紹介文セクション */
+.recruit-intro-visual {
+    position: relative;
+    background: url('../img/akiIMG_6487_TP_V.jpg') center center / cover no-repeat;
+    margin: 80px 0;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* 白のグラデーションマスク（左側を覆う） */
+.recruit-intro-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* テキスト配置レイヤー */
+.recruit-intro-overlay {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.highlight {
+    background: linear-gradient(transparent 60%, #a6ffb2 60%);
+}
+
+.recruit-intro-overlay .intro-text {
+    width: 100%;
+    max-width: 800px;
+    color: #000;
+    text-align: left;
+}
+
+.recruit-intro-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.recruit-intro-overlay p {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* 7つの約束セクション */
+.recruit-feature {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px 30px;
+    background: linear-gradient(to bottom, #fff, #fffafc);
+    border: 1px solid #f3d5e3;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(233, 82, 149, 0.05);
+    text-align: center;
+}
+
+.recruit-feature .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #E95295;
+    margin-bottom: 40px;
+}
+
+.recruit-feature .list-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.recruit-feature .list-left,
+.recruit-feature .list-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 300px;
+}
+
+.recruit-feature li {
+    list-style: none;
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #333;
+    padding-left: 2em;
+}
+
+.recruit-feature li::before {
+    content: "✓";
+    color: #E95295;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 18px;
+}
+
+.recruit-feature li span {
+    background: linear-gradient(transparent 70%, #f8e9f0 70%);
+}
+
+/* FAQセクション */
+.faq-section {
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.faq-section .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #E95295;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.faq-section.inner {
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.faq {
+    background-color: #fff;
+    border: 1px solid #f5d7e2;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.faq dt {
+    font-weight: bold;
+    margin-top: 40px;
+    color: #E95295;
+    font-size: 20px;
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 15px;
+}
+
+.faq dt::before {
+    content: "Q";
+    background-color: #E95295;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.faq dd {
+    margin-top: 12px;
+    margin-left: 0;
+    padding-left: 60px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    position: relative;
+    margin-top: 15px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.faq dd::before {
+    content: "A";
+    background-color: #999;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 募集要項セクション */
+.recruit-detail {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.recruit-detail .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #E95295;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.recruit-detail>p {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* テーブル全体 */
+.recruit-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.recruit-table th,
+.recruit-table td {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 項目名（左） */
+.recruit-table th {
+    width: 25%;
+    background-color: #f9f0f4;
+    color: #c92462;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 内容（右） */
+.recruit-table td {
+    color: #333;
+}
+
+/* 応募フォームセクション */
+.entry-form {
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.entry-form .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #E95295;
+    margin-bottom: 40px;
+}
+
+/* ボタン共通 */
+.entry-form .fixed-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    max-width: 90%;
+    padding: 15px 20px;
+    margin: 10px 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.4;
+    color: #000;
+}
+
+.entry-form .fixed-btn img {
+    height: 24px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+/* 電話ボタン */
+.entry-form .tel-fixed {
+    background-color: #fff;
+    border: 2px solid #AB0044;
+}
+
+.entry-form .tel-fixed:hover {
+    background-color: #AB0044;
+    color: #fff;
+}
+
+/* LINEボタン */
+.entry-form .line-fixed {
+    background-color: #fff;
+    border: 2px solid #16BC2D;
+}
+
+.entry-form .line-fixed:hover {
+    background-color: #16BC2D;
+    color: #fff;
+}
+
+/* ====================================================
+スケジュール
+=======================================================*/
+.schedule {
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px 0;
+    margin-bottom: 60px;
+}
+
+.schedule .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.week_calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 0;
+    list-style: none;
+}
+
+.week_calendar ul li {
+    width: calc(100% / 7.1);
+    background: #ce5277;
+    text-align: center;
+    margin-right: 1px;
+    font-size: 20px;
+    margin-bottom: 1px;
+}
+
+.week_calendar ul li.target {
+    background: #fd89ac;
+}
+
+.week_calendar ul li {
+    transition: background 0.3s ease;
+}
+
+.week_calendar ul li a:hover {
+    background: #f7a5bc;
+}
+
+.week_calendar ul li a {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+
+.schedule-day-ttl {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.badge.worktime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.badge.worktime img {
+    margin-right: 5px;
+    width: 17px;
+    object-fit: contain;
+}
+
+/* ===== price-system.html 固有の強制表示CSS ===== */
+body.page-price header.site-header,
+body.page-price .bottom-fixed {
+    /* 非表示用クラスを打ち消し */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    /* とにかく上にのっける */
+    z-index: 9999 !important;
+}
+
+/* --------------------------------------------------
+SNS セクションを追加
+-------------------------------------------------- */
+.sns-section {
+    background: #f8f8f8;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.sns-title {
+    font-size: 32px;
+    color: #d96b94;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.sns-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sns-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border: 2px solid #f8b6c8;
+    border-radius: 10px;
+    padding: 15px 25px;
+    max-width: 400px;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.sns-card:hover {
+    transform: scale(1.03);
+}
+
+.sns-card img {
+    height: 32px;
+    /* お好みで調整 */
+    max-width: 40px;
+    /* 横に伸びすぎないように制限 */
+    margin-right: 10px;
+    /* 画像とテキストの間にスペース */
+}
+
+.sns-info {
+    text-align: left;
+}
+
+.sns-name {
+    display: block;
+    font-size: 16px;
+    color: #d96b94;
+    font-weight: bold;
+}
+
+.sns-handle {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* フェード系アニメｰション実装 */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------
+レスポンシブ対応
+-------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        display: none !important;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        z-index: 1000;
+        padding: 30px 0;
+        border-top: 1px solid #ccc;
+    }
+
+    .main-nav.active {
+        display: flex !important;
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    .main-nav li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 8px 16px;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background-color: #000;
+        border-radius: 3px;
+    }
+
+    .mainvisual {
+        height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+    }
+
+    .mainvisual h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .mainvisual h1 img {
+        max-width: 105%;
+        height: auto;
+    }
+
+    .slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 固定ページ */
+    .bottom-fixed {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 68px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 192, 211, 0.7);
+    }
+
+    /* 各ボタンを 46% 幅に固定してはみ出しを防止 */
+    .fixed-btn {
+        flex: 1;
+        min-width: 0;
+        margin: 0 5px;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: rgba(255, 241, 241, 0.74);
+        border: 2px solid;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .fixed-btn img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    /* ボーダー色 */
+    .tel-fixed {
+        border-color: #E4709F;
+    }
+
+    .line-fixed {
+        border-color: #16BC2D;
+    }
+
+    /* 改行用 br を有効化 */
+    .sp-only {
+        display: block;
+        margin-top: 2px;
+    }
+
+    /* ラベルと番号を縦並びに */
+    .fixed-btn span {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    /* タイトル */
+    .section-title {
+        font-size: 30px;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+    }
+
+    /* 出勤セラピスト */
+    .therapist-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0 10px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .tags .tag {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
+    /* イベント */
+    /* EVENTセクションのスライド画像幅を335pxに固定 */
+    .event_swiper .swiper-slide img {
+        width: 335px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* コンセプトセクション */
+    .concept-section-top {
+        padding: 60px 16px;
+        min-height: auto;
+    }
+
+    .concept-content-top {
+        padding: 30px 16px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .concept-content-top h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    /* アクセス */
+    .shopinfo_item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* LINK */
+    .link_grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 335px;
+    }
+
+    /* ヘッダー */
+
+    .main-visual {
+        height: 250px;
+        margin-bottom: 0;
+    }
+
+    /* スケジュール */
+    .schedule-day-ttl {
+        font-size: 20px;
+    }
+
+    .week_calendar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+        padding: 0;
+        list-style: none;
+        gap: 8px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .week_calendar ul li {
+        width: calc((100% - 30px) / 4);
+        background: #ce5277;
+        text-align: center;
+        font-size: 18px;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+        color: #fff;
+        list-style: none;
+    }
+
+    .week_calendar ul li:nth-child(n+5) {
+        width: calc((79% - 49px) / 3);
+    }
+
+    .week_calendar ul li a {
+        display: block;
+        padding: 10px 0;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* セラピスト詳細 */
+
+    .profile-inner {
+        display: block;
+    }
+
+    .profile-photo,
+    .profile-detail {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* ▼ メインスライダー画像のスライド幅を強制上書き */
+    .profile-main .swiper-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* ▼ メインスライダー画像自体 */
+    .profile-main .swiper-slide img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* ▼ Swiper全体の横幅制限を解除（親要素） */
+    .profile-main {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .profile-main .swiper-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* ▼ スライド内の画像に対してレスポンシブ対応 */
+    .profile-main .swiper-slide img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* ▼ サムネイルスライダー（下段） */
+    .profile-thumbs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .profile-thumbs .swiper-slide {
+        width: 32% !important;
+        height: auto;
+        margin-right: 2% !important;
+    }
+
+    .profile-thumbs .swiper-slide:nth-child(3n) {
+        margin-right: 0 !important;
+    }
+
+    .profile-thumbs .swiper-slide img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* 求人ページ */
+
+    /* ▼ メインビジュアル全体 */
+    .mv-section {
+        position: relative;
+        padding: 0;
+    }
+
+    .mv-image {
+        max-height: 360px;
+        overflow: hidden;
+    }
+
+    .mv-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+    }
+
+    .mv-section .mv-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        max-width: 260px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    .mv-section .mv-text h1 {
+        font-size: 1.3rem;
+        line-height: 1.2;
+        margin: 0;
+        letter-spacing: 0.5px;
+        word-break: keep-all;
+        white-space: normal;
+        display: block;
+    }
+
+    .mv-section .mv-text p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    /* ▼ 「今すぐ応募」ボタンサイズ調整 */
+    .mv-section .btn-primary {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-top: 8px;
+        border-radius: 6px;
+    }
+
+    /* ▼ 紹介文背景エリア */
+    .recruit-intro-visual {
+        position: relative;
+        background: url("../img/akiIMG_6489_TP_V.jpg") center 70% / cover no-repeat;
+        min-height: 400px;
+        padding: 40px 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .recruit-intro-mask {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.685);
+        z-index: 1;
+    }
+
+    .recruit-intro-overlay {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .recruit-intro-overlay .intro-text {
+        color: #333;
+        text-align: left;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .recruit-intro-overlay h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .recruit-intro-overlay p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    /* ▼ 7つの約束セクション */
+    .recruit-feature {
+        padding: 25px 16px;
+        margin: 40px 10px;
+    }
+
+    .recruit-feature .list-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .recruit-feature .list-left,
+    .recruit-feature .list-right {
+        min-width: 100%;
+    }
+
+    .recruit-feature li {
+        font-size: 15px;
+        padding-left: 1.6em;
+    }
+
+    .recruit-feature .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    /* ▼ FAQセクション */
+    .recruit-intro-overlay h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .faq dt {
+        font-size: 18px;
+    }
+
+    .faq dd {
+        font-size: 16px;
+    }
+
+    /* ▼ 応募フォーム（下部ボタン） */
+    .entry-form .fixed-btn {
+        width: 100%;
+        margin: 8px 0;
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+    /* 料金・システムページ */
+    .concept-section-price {
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .concept-bg-img-price {
+        width: 100%;
+        height: auto;
+        min-height: 520px;
+        display: block;
+        border-radius: 0;
+        object-fit: cover;
+    }
+
+    .concept-wrapper-price {
+        max-width: none;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .concept-content-price {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.92);
+        padding: 20px 11px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 91.5%;
+        max-width: 95%;
+        max-height: 95%;
+        overflow: hidden;
+        text-align: center;
+        font-family: 'Noto Serif JP', serif;
+        line-height: 1.8;
+        color: #3e2b2b;
+        margin: 0;
+    }
+
+    .concept-content-price h2 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        word-break: keep-all;
+    }
+
+    .concept-content-price p {
+        font-size: 14px;
+        margin: 0;
+        word-break: break-word;
+    }
+
+    .price-section {
+        padding: 60px 16px;
+    }
+
+    /* タイトルサイズをスマホ向けに調整 */
+    .section-title.pricing {
+        font-size: 20px;
+        margin: 30px 0 16px;
+    }
+
+    .section-title.pricing span {
+        font-size: 18px;
+        padding: 0 12px;
+    }
+
+    .section-title.pricing span::before,
+    .section-title.pricing span::after {
+        width: 40px;
+        margin: 0 8px;
+    }
+
+    /* イメージの高さと余白を縮小 */
+    .price-image {
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 16px auto;
+    }
+
+    .price-image img {
+        max-height: 140px;
+        border-radius: 6px;
+    }
+
+    /* テーブルフォントと余白を小さく */
+    .price-table {
+        font-size: 18px;
+        margin: 20px auto;
+    }
+
+    .price-table td {
+        padding: 12px 6px;
+    }
+
+    .course-name {
+        font-size: 18px;
+    }
+
+    .course-price {
+        font-size: 18px;
+    }
+
+    .separator {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    /* オプションテーブル上のマージン調整 */
+    .option-title {
+        margin-top: 48px;
+    }
+
+    /* 特定商法取引法に基づく表示 */
+    .section-inner {
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .law-table th {
+        width: 126px;
+
+    }
+
+    .law-table th,
+    .law-table td {
+        padding: 10px;
+    }
+
+    .terms-box {
+        padding: 26px;
+    }
+
+    /* SNS */
+    .sns-section {
+        padding: 20px;
+    }
+
+    .sns-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sns-card {
+        padding: 10px 12px;
+    }
+
+    .sns-card img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .sns-info .sns-name {
+        font-size: 14px;
+    }
+
+    .sns-info .sns-handle {
+        font-size: 12px;
+    }
+
+    .sns-title {
+        font-size: 30px;
+        margin-bottom: 45px;
+    }
+}
